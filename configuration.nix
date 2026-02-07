@@ -12,6 +12,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  hardware.amdgpu.initrd.enable = true;
+
   boot.loader = {
     efi.canTouchEfiVariables = true;
     systemd-boot.enable = false; # Disable systemd-boot explicitly
