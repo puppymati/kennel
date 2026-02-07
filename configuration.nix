@@ -111,6 +111,10 @@
     zoxide
     nautilus
     udiskie
+    ironbar
+    claude-code
+    zellij
+    mako
     (vscode.override {
       commandLineArgs = [
         "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
