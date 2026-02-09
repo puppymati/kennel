@@ -140,6 +140,7 @@
     fnm
     uv
     wl-clipboard
+    bun
     (vscode.override {
       commandLineArgs = [
         "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
