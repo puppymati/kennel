@@ -9,6 +9,7 @@
   services.displayManager.ly.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.udisks2.enable = true;
+  services.tailscale.enable = true;
 
   security.pam.services.login.enableGnomeKeyring = true;
   security.polkit.enable = true;

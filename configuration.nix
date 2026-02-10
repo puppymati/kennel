@@ -140,6 +140,7 @@
     uv
     wl-clipboard
     bun
+    nil
     pavucontrol
     (vscode.override {
       commandLineArgs = [
