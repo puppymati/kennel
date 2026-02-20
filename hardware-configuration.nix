@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }:
@@ -37,6 +36,17 @@
     options = [
       "fmask=0022"
       "dmask=0022"
+    ];
+  };
+
+  fileSystems."/mnt/side-piece" = {
+    device = "/dev/disk/by-uuid/0632C70432C6F827";
+    fsType = "ntfs-3g";
+    options = [
+      "uid=1000"
+      "gid=1000"
+      "umask=022"
+      "defaults"
     ];
   };
 
