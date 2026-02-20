@@ -130,6 +130,24 @@
       enable = true;
       enableZshIntegration = true;
     };
+
+    nixcord = {
+      enable = true;
+      user = "matilde";
+
+      discord = {
+        vencord.enable = false;
+        equicord.enable = true;
+      };
+
+      openASAR.enable = true;
+
+      config = {
+        plugins = {
+          userMessagesPronouns.enable = true;
+        };
+      };
+    };
   };
 
   fonts.packages =
@@ -153,9 +171,6 @@
     systemPackages = with pkgs; [
       neovim
       fuzzel
-      (discord.override {
-        withEquicord = true;
-      })
       xwayland-satellite
       signal-desktop
       hyfetch
@@ -183,7 +198,6 @@
       pavucontrol
       bubblewrap
       slack
-      equicord
       brightnessctl
       bottom
       file
