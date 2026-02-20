@@ -74,6 +74,19 @@
     vscode.enable = true;
     nix-ld.enable = true;
 
+    obs-studio = {
+      enable = true;
+
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+        obs-backgroundremoval
+        obs-vkcapture
+        obs-pipewire-audio-capture
+        obs-vaapi
+        obs-gstreamer
+      ];
+    };
+
     gnupg.agent = {
       enable = true;
       pinentryPackage = pkgs.pinentry-qt;
@@ -141,7 +154,9 @@
     systemPackages = with pkgs; [
       neovim
       fuzzel
-      discord
+      (discord.override {
+        withEquicord = true;
+      })
       xwayland-satellite
       signal-desktop
       hyfetch
@@ -170,6 +185,16 @@
       bubblewrap
       slack
       equicord
+      brightnessctl
+      bottom
+      file
+      lsd
+      spotify
+      filezilla
+      qbittorrent
+      feishin
+      android-studio
+      theclicker
       (vscode.override {
         commandLineArgs = [
           "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
