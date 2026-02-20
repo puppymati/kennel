@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 
@@ -195,6 +196,7 @@
       feishin
       android-studio
       theclicker
+      inputs.opencode.packages.${pkgs.system}.default
       (vscode.override {
         commandLineArgs = [
           "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
