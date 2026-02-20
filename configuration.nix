@@ -196,6 +196,8 @@
       feishin
       android-studio
       theclicker
+      prismlauncher
+      jdk21_headless
       inputs.opencode.packages.${pkgs.system}.default
       (vscode.override {
         commandLineArgs = [
