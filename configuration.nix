@@ -1,8 +1,6 @@
 {
-  config,
   lib,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -16,7 +14,7 @@
   hardware.amdgpu.initrd.enable = true;
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
 
     loader = {
       efi.canTouchEfiVariables = true;
@@ -198,7 +196,7 @@
       theclicker
       prismlauncher
       jdk21_headless
-      inputs.opencode.packages.${pkgs.system}.default
+      opencode
       (vscode.override {
         commandLineArgs = [
           "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
@@ -209,10 +207,15 @@
     ];
   };
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+
+    substituters = [ "https://attic.xuyh0120.win/lantian" ];
+    trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
+  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
