@@ -67,7 +67,6 @@
   };
 
   programs = {
-    firefox.enable = true;
     niri.enable = true;
     foot.enable = true;
     vscode.enable = true;
@@ -227,6 +226,7 @@
       jdk21_headless
       opencode
       pnpm
+      zen-browser
       (vscode.override {
         commandLineArgs = [
           "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
