@@ -226,6 +226,7 @@
       prismlauncher
       jdk21_headless
       opencode
+      pnpm
       (vscode.override {
         commandLineArgs = [
           "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
