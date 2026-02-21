@@ -131,23 +131,38 @@
       enableZshIntegration = true;
     };
 
-    nixcord = {
-      enable = true;
-      user = "matilde";
+    nixcord =
+      let
+        enablePlugins =
+          plugins:
+          lib.mergeAttrsList (
+            map (
+              name:
+              if builtins.isString name then
+                { ${name}.enable = true; }
+              else
+                lib.mapAttrs (_: opts: opts // { enable = true; }) name
+            ) plugins
+          );
+      in
+      {
+        enable = true;
+        user = "matilde";
 
-      discord = {
-        vencord.enable = false;
-        equicord.enable = true;
-      };
-
-      openASAR.enable = true;
-
-      config = {
-        plugins = {
-          userMessagesPronouns.enable = true;
+        discord = {
+          vencord.enable = false;
+          equicord.enable = true;
         };
+
+        openASAR.enable = true;
+
+        config.plugins = enablePlugins [
+          "userMessagesPronouns"
+          "questify"
+          "betterGifPicker"
+          { LastFMRichPresence.apiKey = ""; }
+        ];
       };
-    };
   };
 
   fonts.packages =
