@@ -227,6 +227,7 @@
       opencode
       pnpm
       zen-browser
+      deno
       (vscode.override {
         commandLineArgs = [
           "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
