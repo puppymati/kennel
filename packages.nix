@@ -1,0 +1,56 @@
+pkgs: with pkgs; [
+  neovim
+  fuzzel
+  xwayland-satellite
+  signal-desktop
+  hyfetch
+  fastfetch
+  xdg-desktop-portal-gtk
+  xdg-desktop-portal-gnome
+  gnome-keyring
+  efibootmgr
+  seahorse
+  kdePackages.polkit-kde-agent-1
+  nixfmt
+  git
+  nautilus
+  udiskie
+  ironbar
+  claude-code
+  zellij
+  mako
+  teams-for-linux
+  fnm
+  uv
+  wl-clipboard
+  bun
+  nil
+  pavucontrol
+  bubblewrap
+  slack
+  brightnessctl
+  bottom
+  file
+  lsd
+  spotify
+  filezilla
+  qbittorrent
+  feishin
+  android-studio
+  theclicker
+  prismlauncher
+  jdk21_headless
+  opencode
+  pnpm
+  zen-browser
+  deno
+  b3sum
+  telegram-desktop
+  (vscode.override {
+    commandLineArgs = [
+      "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
+      "--ozone-platform=wayland"
+      "--password-store=gnome-libsecret"
+    ];
+  })
+]
