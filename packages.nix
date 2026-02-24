@@ -46,6 +46,9 @@ pkgs: with pkgs; [
   deno
   b3sum
   telegram-desktop
+  poetry
+  dbeaver-bin
+  postgresql
   (vscode.override {
     commandLineArgs = [
       "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
