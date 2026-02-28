@@ -49,6 +49,7 @@ pkgs: with pkgs; [
   poetry
   dbeaver-bin
   postgresql
+  yt-dlp
   (vscode.override {
     commandLineArgs = [
       "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
