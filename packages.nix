@@ -50,6 +50,7 @@ pkgs: with pkgs; [
   dbeaver-bin
   postgresql
   yt-dlp
+  android-tools
   (vscode.override {
     commandLineArgs = [
       "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
