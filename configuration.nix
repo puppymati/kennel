@@ -15,6 +15,9 @@
 
   boot = {
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
+    kernelParams = [
+      "amdgpu.ppfeaturemask=0xffffffff"
+    ];
 
     loader = {
       efi.canTouchEfiVariables = true;
@@ -59,6 +62,7 @@
       "wheel"
       "docker"
       "networkmanager"
+      "gamemode"
     ];
     shell = pkgs.zsh;
     packages = with pkgs; [
@@ -71,6 +75,7 @@
     foot.enable = true;
     vscode.enable = true;
     nix-ld.enable = true;
+    gamemode.enable = true;
 
     obs-studio = {
       enable = true;
