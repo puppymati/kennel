@@ -9,6 +9,12 @@
   services.udisks2.enable = true;
   services.tailscale.enable = true;
   services.lact.enable = true;
+  services.ollama = {
+    enable = true;
+    package = pkgs.ollama-rocm;
+  };
+  services.open-webui.enable = true;
+  services.open-webui.port = 49783;
 
   security.pam.services.login.enableGnomeKeyring = true;
   security.polkit.enable = true;
