@@ -51,6 +51,10 @@ pkgs: with pkgs; [
   postgresql
   yt-dlp
   android-tools
+  pcsx2
+  unzip
+  qdirstat
+  usbutils
   (vscode.override {
     commandLineArgs = [
       "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
