@@ -53,4 +53,15 @@
       TimeoutStopSec = 10;
     };
   };
+
+  systemd.user.services.udiskie = {
+    description = "Automount removable media";
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.udiskie}/bin/udiskie --automount --no-file-manager";
+      Restart = "on-failure";
+      RestartSec = 3;
+    };
+  };
 }
