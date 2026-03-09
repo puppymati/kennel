@@ -55,6 +55,11 @@ pkgs: with pkgs; [
   unzip
   qdirstat
   usbutils
+  jellyfin-desktop
+  ffmpeg
+  tutanota-desktop
+  p7zip
+  screen
   (vscode.override {
     commandLineArgs = [
       "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
