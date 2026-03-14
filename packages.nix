@@ -5,17 +5,11 @@ pkgs: with pkgs; [
   signal-desktop
   hyfetch
   fastfetch
-  xdg-desktop-portal-gtk
-  xdg-desktop-portal-gnome
-  gnome-keyring
   efibootmgr
   seahorse
-  kdePackages.polkit-kde-agent-1
   nixfmt
   git
   nautilus
-  udiskie
-  ironbar
   claude-code
   zellij
   mako
@@ -64,8 +58,6 @@ pkgs: with pkgs; [
   pandoc
   (vscode.override {
     commandLineArgs = [
-      "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
-      "--ozone-platform=wayland"
       "--password-store=gnome-libsecret"
     ];
   })

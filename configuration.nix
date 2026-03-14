@@ -169,6 +169,22 @@
       };
   };
 
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+    ];
+    config.niri = {
+      default = [
+        "gnome"
+        "gtk"
+      ];
+      "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+    };
+  };
+
   fonts.packages =
     with pkgs;
     [
@@ -190,6 +206,9 @@
     # Workaround for nixpkgs bug: foot module sets source = lib.mkIf false ...
     # which leaves the option defined but with no value when serverAutostart = false
     etc."xdg/autostart/foot-server.desktop" = lib.mkOverride 0 { enable = false; };
+
+    # Makes stuff work under wayland apparently
+    sessionVariables.NIXOS_OZONE_WL = "1";
   };
 
   nix.settings = {
@@ -198,8 +217,8 @@
       "flakes"
     ];
 
-    substituters = [ "https://attic.xuyh0120.win/lantian" ];
-    trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
+    extra-substituters = [ "https://attic.xuyh0120.win/lantian" ];
+    extra-trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
   };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
