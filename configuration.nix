@@ -187,6 +187,9 @@
   environment = {
     localBinInPath = true;
     systemPackages = (import ./packages.nix pkgs);
+    # Workaround for nixpkgs bug: foot module sets source = lib.mkIf false ...
+    # which leaves the option defined but with no value when serverAutostart = false
+    etc."xdg/autostart/foot-server.desktop" = lib.mkOverride 0 { enable = false; };
   };
 
   nix.settings = {
