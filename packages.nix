@@ -60,6 +60,8 @@ pkgs: with pkgs; [
   tutanota-desktop
   p7zip
   screen
+  cargo-shear
+  pandoc
   (vscode.override {
     commandLineArgs = [
       "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
