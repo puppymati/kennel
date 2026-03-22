@@ -56,6 +56,8 @@ pkgs: with pkgs; [
   screen
   cargo-shear
   pandoc
+  protonup-qt
+  inkscape
   (vscode.override {
     commandLineArgs = [
       "--password-store=gnome-libsecret"
