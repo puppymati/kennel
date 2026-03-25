@@ -31,6 +31,11 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    helix = {
+      url = "github:helix-editor/helix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     inputs@{ self, nixpkgs, ... }:
@@ -41,6 +46,7 @@
             nixpkgs.overlays = [
               nix-cachyos-kernel.overlays.pinned
               opencode.overlays.default
+              helix.overlays.default
 
               (final: prev: {
                 zen-browser = inputs.zen-browser.packages.${prev.system}.default;

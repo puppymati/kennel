@@ -58,6 +58,7 @@ pkgs: with pkgs; [
   pandoc
   protonup-qt
   inkscape
+  helix
   (vscode.override {
     commandLineArgs = [
       "--password-store=gnome-libsecret"
