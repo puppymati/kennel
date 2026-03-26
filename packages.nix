@@ -59,6 +59,11 @@ pkgs: with pkgs; [
   protonup-qt
   inkscape
   helix
+  veracrypt
+  libreoffice-fresh
+  hunspell
+  hunspellDicts.en_US
+  hunspellDicts.it_IT
   (vscode.override {
     commandLineArgs = [
       "--password-store=gnome-libsecret"
