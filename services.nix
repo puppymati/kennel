@@ -41,6 +41,19 @@
     };
   };
 
+  systemd.user.services.swaybg = {
+    description = "swaybg wallpaper";
+    wantedBy = [ "niri.service" ];
+    after = [ "niri.service" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.swaybg}/bin/swaybg -o DP-2 -i %h/Pictures/wall-rotated.png -o '*' -i %h/Pictures/wall.png";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
+  };
+
   systemd.user.services.ironbar = {
     description = "ironbar";
     wantedBy = [ "niri.service" ];
