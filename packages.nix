@@ -67,6 +67,7 @@ pkgs: with pkgs; [
   hunspellDicts.it_IT
   obsidian
   libarchive
+  vlc
   (vscode.override {
     commandLineArgs = [
       "--password-store=gnome-libsecret"
