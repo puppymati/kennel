@@ -50,7 +50,7 @@ pkgs: with pkgs; [
   qdirstat
   usbutils
   jellyfin-desktop
-  ffmpeg
+  ffmpeg-full
   tutanota-desktop
   p7zip
   screen
@@ -68,6 +68,8 @@ pkgs: with pkgs; [
   obsidian
   libarchive
   vlc
+  easyeffects
+  pulseaudio
   (vscode.override {
     commandLineArgs = [
       "--password-store=gnome-libsecret"
