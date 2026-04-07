@@ -70,6 +70,15 @@ pkgs: with pkgs; [
   vlc
   easyeffects
   pulseaudio
+  (pkgs.symlinkJoin {
+    name = "sweethome3d";
+    paths = [ pkgs.sweethome3d.application ];
+    buildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/sweethome3d \
+        --set _JAVA_AWT_WM_NONREPARENTING 1
+    '';
+  })
   (vscode.override {
     commandLineArgs = [
       "--password-store=gnome-libsecret"
