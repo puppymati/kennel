@@ -16,6 +16,12 @@
   # services.open-webui.enable = true;
   # services.open-webui.port = 49783;
 
+  services.resolved.enable = true;
+  services.mullvad-vpn = {
+    enable = true;
+    package = pkgs.mullvad-vpn;
+  };
+
   security.pam.services.login.enableGnomeKeyring = true;
   security.polkit.enable = true;
 
