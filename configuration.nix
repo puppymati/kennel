@@ -158,7 +158,7 @@
           equicord.enable = true;
         };
 
-        openASAR.enable = true;
+        openASAR.enable = false;
 
         config.plugins = enablePlugins [
           "userMessagesPronouns"
