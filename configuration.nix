@@ -47,7 +47,12 @@
 
   networking = {
     hostName = "mati-nixing";
-    networkmanager.enable = true;
+    networkmanager.enable = false;
+    wireless.iwd = {
+      enable = true;
+      settings.General.EnableNetworkConfiguration = true;
+    };
+    useNetworkd = true;
   };
   time.timeZone = "Europe/Rome";
 
@@ -61,7 +66,6 @@
     extraGroups = [
       "wheel"
       "docker"
-      "networkmanager"
       "gamemode"
     ];
     shell = pkgs.zsh;

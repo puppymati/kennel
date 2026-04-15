@@ -83,4 +83,16 @@
       RestartSec = 3;
     };
   };
+
+  systemd.user.services.iwgtk = {
+    description = "iwgtk tray applet";
+    wantedBy = [ "niri.service" ];
+    after = [ "niri.service" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.iwgtk}/bin/iwgtk -i";
+      Restart = "on-failure";
+      RestartSec = 1;
+    };
+  };
 }

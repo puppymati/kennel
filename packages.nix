@@ -70,6 +70,7 @@ pkgs: with pkgs; [
   vlc
   easyeffects
   pulseaudio
+  iwgtk
   (pkgs.symlinkJoin {
     name = "sweethome3d";
     paths = [ pkgs.sweethome3d.application ];
