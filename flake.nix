@@ -24,7 +24,7 @@
     };
 
     opencode = {
-      url = "github:anomalyco/opencode/v1.3.17";
+      url = "github:anomalyco/opencode/v1.14.37";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -51,6 +51,10 @@
 
               (final: prev: {
                 zen-browser = inputs.zen-browser.packages.${prev.system}.default;
+              })
+
+              (final: prev: {
+                bun = final.callPackage ./bun.nix { };
               })
             ];
 
