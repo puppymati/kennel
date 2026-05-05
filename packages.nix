@@ -71,6 +71,8 @@ pkgs: with pkgs; [
   easyeffects
   pulseaudio
   iwgtk
+  bruno
+  xh
   (pkgs.symlinkJoin {
     name = "sweethome3d";
     paths = [ pkgs.sweethome3d.application ];
