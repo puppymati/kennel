@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "bunbun": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1777984610,
+        "narHash": "sha256-oNZjWRo5Oxf4MIUOxwj1PIQ/4MVqn0jtnPMVvRybhYA=",
+        "owner": "puppymati",
+        "repo": "bunbun",
+        "rev": "e7d5c84be4c337717c2e84dfcd37df6e0e950f04",
+        "type": "github"
+      },
+      "original": {
+        "owner": "puppymati",
+        "repo": "bunbun",
+        "type": "github"
+      }
+    },
     "cachyos-kernel": {
       "flake": false,
       "locked": {
@@ -226,6 +246,7 @@
     },
     "root": {
       "inputs": {
+        "bunbun": "bunbun",
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
         "helix": "helix",

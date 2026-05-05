@@ -37,6 +37,11 @@
       url = "github:helix-editor/helix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    bunbun = {
+      url = "github:puppymati/bunbun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     inputs@{ self, nixpkgs, ... }:
@@ -53,9 +58,7 @@
                 zen-browser = inputs.zen-browser.packages.${prev.system}.default;
               })
 
-              (final: prev: {
-                bun = final.callPackage ./bun.nix { };
-              })
+              bunbun.overlays.default
             ];
 
             imports = [ inputs.nixcord.nixosModules.nixcord ];
