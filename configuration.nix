@@ -160,9 +160,8 @@
         discord = {
           vencord.enable = false;
           equicord.enable = true;
+          openASAR.enable = false;
         };
-
-        openASAR.enable = false;
 
         config.plugins = enablePlugins [
           "userMessagesPronouns"
