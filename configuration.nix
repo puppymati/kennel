@@ -157,10 +157,17 @@
         enable = true;
         user = "matilde";
 
-        discord = {
-          vencord.enable = false;
+        discord.enable = false;
+
+        legcord = {
+          enable = true;
           equicord.enable = true;
-          openASAR.enable = false;
+          settings = {
+            mods = [ "equicord" ];
+            tray = true;
+            hardwareAcceleration = true;
+            doneSetup = true;
+          };
         };
 
         config.plugins = enablePlugins [
